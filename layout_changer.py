@@ -1,6 +1,6 @@
 from convert import Convert
-from pyperclip import paste
-from keyboard import add_hotkey, wait
+from pyperclip import paste, copy
+from keyboard import add_hotkey, press_and_release, wait
 from sys import exit
 
 class Changer:
@@ -12,7 +12,13 @@ class Changer:
 	@staticmethod
 	def change_symbols():
 		
-		Convert.convert_symbols(paste())
+		clipboard = Convert.convert_symbols(paste())
+
+		if clipboard is None:
+			return
+
+		copy(clipboard)
+		press_and_release('ctrl+v')
 
 	@staticmethod
 	def start():

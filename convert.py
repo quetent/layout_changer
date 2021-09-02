@@ -1,5 +1,3 @@
-from pyperclip import copy
-
 class Convert:
 
 	ru_symbols = list('Ёёйцукенгшщзхъфывапролджэячсмитьбю.ЙЦУКЕНГШЩЗХ/ЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,"№;:?')
@@ -40,4 +38,4 @@ class Convert:
 			except ValueError:
 				clipboard += symbol
 
-		copy(clipboard)
+		return clipboard
