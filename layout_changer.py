@@ -12,6 +12,8 @@ class Changer:
 	@staticmethod
 	def change_symbols():
 		
+		press_and_release('ctrl+c')
+
 		clipboard = Convert.convert_symbols(paste())
 
 		if clipboard is None:
@@ -28,7 +30,7 @@ class Changer:
 if __name__ == '__main__':
 
 	try:
-		HOTKEY = 'ctrl+shift'
+		HOTKEY = 'ctrl+b'
 		Changer(HOTKEY).start()
 	except (KeyboardInterrupt, SystemExit):
 		exit()
